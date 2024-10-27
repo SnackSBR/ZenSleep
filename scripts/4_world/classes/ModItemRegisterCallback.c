@@ -1,6 +1,6 @@
 modded class ModItemRegisterCallbacks
 {
-    void RegisterOneHanded(DayZPlayerType pType, DayzPlayerItemBehaviorCfg pBehavior)
+    override void RegisterOneHanded(DayZPlayerType pType, DayzPlayerItemBehaviorCfg pBehavior)
     {
         super.RegisterOneHanded(pType, pBehavior);
 
