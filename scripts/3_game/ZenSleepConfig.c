@@ -85,23 +85,6 @@ class ZenSleepConfig
 	string UsedStimSyringeType = "ZenSleep_Empty_StimSyringe"; // Drop this item when a stim syringe is used ( set to blank for no item, or Syringe for normal syringe)
 	string UsedSleepSyringeType = "ZenSleep_Empty_Syringe"; // Drop this item when a sleep syringe is used (set to blank for no item)
 
-	// String config (only applicable if TextNotificationOn = true)
-	string CONFIG_TEXT = "------------------------------------------------------------------------------------";
-	string Str_RestUpdate = "My rest level is"; // Rest level update
-	string Str_RestUpdate1 = "and I'm cold...";
-	string Str_RestUpdate2 = "and I'm losing warmth...";
-	string Str_RestUpdate3 = "and I'm warm.";
-	string Str_RestUpdate4 = "and I'm comfortably warm.";
-	string Str_RestUpdate5 = "and my clothes are wet and uncomfortable...";
-	string Str_ITooTired1 = "I feel really tired... I should lie down soon and get some rest.";
-	string Str_ITooTired2 = "I've been awake for a long time now... I should lie down and get some rest.";
-	string Str_ITooTired3 = "I don't have much energy... I should lie down soon and get some rest.";
-	string Str_CantSleep1 = "I don't think I can sleep any longer...";
-	string Str_CantSleep2 = "I don't think I can sleep any longer, I'm too cold...";
-	string Str_CantSleep3 = "I don't think I can sleep any longer, it's too bright and I'm cold...";
-	string Str_CantSleep4 = "I don't think I can sleep any longer, it's too bright...";
-	string Str_CantSleep5 = "I don't think I can sleep any longer, my clothes are wet and I'm cold...";
-
 	// Debug config
 	string CONFIG_DEBUG = "-----------------------------------------------------------------------------------";
 	float TirednessHudX = 0.855; // X position for tiredness widget

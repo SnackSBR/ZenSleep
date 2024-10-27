@@ -357,15 +357,15 @@ modded class PlayerBase
 		if (!m_FallUnconsciousFromTiredness && GetZenSleepConfig().TextNotificationOn && Math.RandomIntInclusive(1, 3) == 2)
 		{
 			int rand = Math.RandomIntInclusive(1, 3);
-			string msg = GetZenSleepConfig().Str_ITooTired1; // "I feel really tired... I should lie down soon and get some rest."
+			string msg = "#STR_ITooTired1"; // "I feel really tired... I should lie down soon and get some rest."
 			if (rand == 2)
 			{
-				msg = GetZenSleepConfig().Str_ITooTired2; // "I've been awake for a long time now... I should lie down and get some rest."
+				msg = "#STR_ITooTired2"; // "I've been awake for a long time now... I should lie down and get some rest."
 			}
 			else
 			if (rand == 3)
 			{
-				msg = GetZenSleepConfig().Str_ITooTired3; // "I don't have much energy... I should lie down soon and get some rest."
+				msg = "#STR_ITooTired3"; // "I don't have much energy... I should lie down soon and get some rest."
 			}
 
 			ZS_SendMessage(msg);
@@ -616,28 +616,28 @@ modded class PlayerBase
 					if (restPercent != m_prevTirednessPercent)
 					{
 						m_prevTirednessPercent = restPercent;
-						string warmCold = GetZenSleepConfig().Str_RestUpdate1; // and I'm cold...
+						string warmCold = "#STR_RestUpdate1"; // and I'm cold...
 						if (!m_FireNearby && m_HasHeatBuffer) // No fire, but we have the heat buff
 						{
-							warmCold = GetZenSleepConfig().Str_RestUpdate2; // and I'm getting cold...
+							warmCold = "#STR_RestUpdate2"; // and I'm getting cold...
 						} 
 						else
 						if (m_FireNearby) // Yes fire
 						{
-							warmCold = GetZenSleepConfig().Str_RestUpdate3; // and I'm warm
+							warmCold = "#STR_RestUpdate3"; // and I'm warm
 						}
 						if (GetStatWet().Get() == GetZenSleepConfig().WetnessCancelsFireAccelerator)
 						{
-							warmCold = GetZenSleepConfig().Str_RestUpdate5; // and my clothes are wet.
+							warmCold = "#STR_RestUpdate5"; // and my clothes are wet.
 						}
 
 						// Yes fire inside + heat buff
 						if (GetFireSleepAccelerator() > (((float)GetZenSleepConfig().OutsideFireAcceleratorPercent / 100.0) + 1.0) && m_SleepingInside && m_HasHeatBuffer && m_FireNearby)
 						{
-							warmCold = GetZenSleepConfig().Str_RestUpdate4; // and I'm comfortably warm
+							warmCold = "#STR_RestUpdate4"; // and I'm comfortably warm
 						}
 
-						ZS_SendMessage(GetZenSleepConfig().Str_RestUpdate + " " + restPercent.ToString() + "% " + warmCold); // My rest level is x% and I'm warm/cold
+						ZS_SendMessage("#STR_RestUpdate" + " " + restPercent.ToString() + "% " + warmCold); // My rest level is x% and I'm warm/cold
 					}
 				}
 			}
@@ -664,7 +664,7 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								msg = GetZenSleepConfig().Str_CantSleep5; // "I don't think I can sleep any longer, my clothes are wet and I'm uncomfortable..."
+								msg = "#STR_CantSleep5"; // "I don't think I can sleep any longer, my clothes are wet and I'm uncomfortable..."
 								ZS_SendMessage(msg);
 							}
 
@@ -680,9 +680,9 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								msg = GetZenSleepConfig().Str_CantSleep1; // "I don't think I can sleep any longer..."
+								msg = "#STR_CantSleep1"; // "I don't think I can sleep any longer..."
 								if (restPercent < 100.0)
-									msg = GetZenSleepConfig().Str_CantSleep2; // "I don't think I can sleep any longer, I'm too cold..."
+									msg = "#STR_CantSleep2"; // "I don't think I can sleep any longer, I'm too cold..."
 								ZS_SendMessage(msg);
 							}
 
@@ -697,9 +697,9 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								msg = GetZenSleepConfig().Str_CantSleep1; // "I don't think I can sleep any longer..."
+								msg = "#STR_CantSleep1"; // "I don't think I can sleep any longer..."
 								if (restPercent < 100.0)
-									msg = GetZenSleepConfig().Str_CantSleep2; // "I don't think I can sleep any longer, I'm too cold..."
+									msg = "#STR_CantSleep2"; // "I don't think I can sleep any longer, I'm too cold..."
 								ZS_SendMessage(msg);
 							}
 
@@ -721,7 +721,7 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								msg = GetZenSleepConfig().Str_CantSleep5; // "I don't think I can sleep any longer, my clothes are wet and I'm uncomfortable..."
+								msg = "#STR_CantSleep5"; // "I don't think I can sleep any longer, my clothes are wet and I'm uncomfortable..."
 								ZS_SendMessage(msg);
 							}
 
@@ -737,7 +737,7 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								ZS_SendMessage(GetZenSleepConfig().Str_CantSleep3); // "I don't think I can sleep any longer, it's too bright and I'm cold..."
+								ZS_SendMessage("#STR_CantSleep3"); // "I don't think I can sleep any longer, it's too bright and I'm cold..."
 							}
 
 							m_CantSleep = true;
@@ -751,7 +751,7 @@ modded class PlayerBase
 						{
 							if (GetZenSleepConfig().TextNotificationOn)
 							{
-								ZS_SendMessage(GetZenSleepConfig().Str_CantSleep4); // "I don't think I can sleep any longer, it's too bright..."
+								ZS_SendMessage("#STR_CantSleep4"); // "I don't think I can sleep any longer, it's too bright..."
 							}
 
 							m_CantSleep = true;
